@@ -1,6 +1,6 @@
 # Monroe Alumnae Chapter website
 
-Milestone one: a statically rendered Next.js App Router homepage with TypeScript, React, Tailwind CSS, ESLint, and Lucide React. Responsive navigation, a photographic hero, a clearly labeled future-section placeholder, and a basic footer are implemented. No backend, CMS, authentication, or database is included.
+Milestone one: a statically rendered Next.js App Router homepage with TypeScript, React, Tailwind CSS, ESLint, and Lucide React. Responsive navigation, a photographic hero, a president’s welcome with portrait, and a basic footer are implemented. No backend, CMS, authentication, or database is included.
 
 ## Local development
 
@@ -26,10 +26,12 @@ Webpack and the standard Tailwind PostCSS plugin are selected because the local 
 
 - `src/app/`: root metadata, homepage composition, global styles and design tokens.
 - `src/components/layout/`: sticky responsive Navbar and Footer.
-- `src/components/home/`: Hero and HomepageFoundation placeholder.
+- `src/components/home/`: Hero and PresidentsMessage.
 - `src/config/navigation.ts`: verified existing Wix destinations and navigation entries. Replace an external URL with `/your-route` when that page is migrated.
 - `src/config/site.ts`: chapter identity, contact information and verified social URLs.
 - `src/data/homepage.ts`: editable hero copy and image references.
+- `src/data/president.ts`: president welcome and portrait reference.
+- `src/components/ui/SiteLink.tsx`: internal links stay in this tab; external websites open safely in a new tab with an accessible announcement.
 - `public/images/`: local chapter assets optimized through Next Image.
 
 Only the Navbar uses client JavaScript. Native disclosure elements support keyboard dropdowns; the mobile toggle exposes its state, Escape closes the dropdown/menu and restores focus, and a skip link provides direct access to the main content. Fonts use Georgia and system sans-serif without remote font dependencies. Motion is limited to hover transitions with reduced-motion support. A single hero image is deliberate: additional approved images should precede any carousel implementation.
@@ -44,7 +46,7 @@ Asset sources:
 - Logo: https://static.wixstatic.com/media/b376c6_7a501cc221344a138dae209e69f7a8b9~mv2.png
 - Group photograph: https://static.wixstatic.com/media/b376c6_6a2580f95fd444d8b28ab73945826302~mv2.jpg
 
-These are chapter assets from the existing site. Confirm publication approval and preferred high-resolution originals before launch. Hero headline and introduction are proposed editorial copy, not quotations. The remaining-section area is explicitly a preview placeholder; no events, statistics or leadership details are fabricated. No Washington assets are used.
+These are chapter assets from the existing site. Confirm publication approval and preferred high-resolution originals before launch. Hero headline and introduction are proposed editorial copy, not quotations. The president’s welcome and portrait were added October 15, 2026, using the supplied screenshot and published chapter homepage. The welcome retains its published membership count, charter date and leadership details. No Washington assets are used.
 
 ## Verification and known issue
 
@@ -54,4 +56,10 @@ Production build prerenders `/` statically. Desktop and 390px mobile layouts wer
 
 ## Future milestones
 
-After review and explicit approval: upcoming events, president welcome, programs/community impact, and chapter legacy. Obtain approved assets and current content first. Sanity, database features, additional routes and production deployment are deferred. Vercel is the intended host; no deployment, Wix modification, DNS change, or domain change has been performed. Establish the deployment URL before adding canonical and social-preview URLs.
+After review and explicit approval: upcoming events, programs/community impact, and chapter legacy. Obtain approved assets and current content first. Sanity, database features, additional routes and production deployment are deferred. Vercel is the intended host; no deployment, Wix modification, DNS change, or domain change has been performed. Establish the deployment URL before adding canonical and social-preview URLs.
+
+## Navigation update (October 15, 2026)
+
+The existing-website preview callout was removed. Home, the chapter logo, and footer Home point to `/` on the new application. All remaining Wix pages, About Delta (https://www.deltasigmatheta.org/), and regional/social websites open in a separate tab so this homepage stays available. A return instruction is displayed beside the national and regional links. Wix pages retain their own navigation; changing their Home links requires editing Wix or rebuilding those pages, which remains outside this update. Browser Back operates within each tab; return to the original tab to resume the new site. Internal routes will automatically use the same tab as pages migrate.
+
+President portrait source: https://static.wixstatic.com/media/b376c6_e1c02720651d45d899064b2c04155113~mv2.jpg

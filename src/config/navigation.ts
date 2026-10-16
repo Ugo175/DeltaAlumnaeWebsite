@@ -4,7 +4,8 @@ const wix = "https://www.dstmonroealumnae.org";
 export const destinations = {
   home: "/", about: `${wix}/about-us`, programs: `${wix}/portfolio`,
   gallery: `${wix}/gallery`, membership: `${wix}/membership`, contact: `${wix}/contact`,
-  original: wix,
+  national: "https://www.deltasigmatheta.org/",
+  region: "https://www.dstsouthwes.org/",
 };
 export type NavigationItem = { label: string; href: string; children?: { label: string; href: string }[] };
 export const navigation: NavigationItem[] = [

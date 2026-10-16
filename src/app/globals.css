@@ -83,3 +83,21 @@ h2 em { color: var(--crimson); font-weight: normal; }
  .container { width: calc(100% - 40px); } .utility-inner { justify-content: center; height: 30px; font-size: 8px; letter-spacing: 1px; } .utility-inner > a { display: none; } .brand strong { font-size: 18px; } .brand small { font-size: 7px; letter-spacing: .7px; } .brand img { width: 48px; height: 48px; } .nav-inner { gap: 5px; min-height: 82px; } .menu-toggle { padding: 9px; } .hero { min-height: 670px; align-items: flex-end; } .hero-photo img { object-position: 60% top; } .hero-shade { background: linear-gradient(0deg, #171315 2%, #171315ed 40%, #17131566 76%, #17131522); } .hero-content { padding-block: 200px 70px; } .eyebrow { font-size: 8px; letter-spacing: 1.5px; } h1 { font-size: 42px; letter-spacing: -1.4px; margin-block: 24px 20px; } .hero-intro { font-size: 13px; } .hero-actions { flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 25px; } .hero-caption { left: 20px; right: auto; bottom: 23px; font-size: 7px; letter-spacing: 1.4px; } .foundation { grid-template-columns: 1fr; gap: 22px; padding-block: 48px; } h2 { font-size: 32px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; } .footer-grid > div:first-child { grid-column: 1 / -1; } .footer-grid > div > a { overflow-wrap: anywhere; } .footer-bottom { flex-direction: column; gap: 12px; } .footer { padding-top: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+.president-section { background: var(--cream); padding-block: 90px; }
+.president-grid { display: grid; grid-template-columns: minmax(230px, 380px) minmax(0, 1fr); align-items: start; gap: 80px; }
+.president-portrait { margin: 0; padding-top: 10px; }
+.president-portrait img { width: 100%; height: auto; border-radius: 160px 160px 4px 4px; border-bottom: 5px solid var(--crimson); }
+.president-portrait figcaption { padding-top: 23px; text-align: center; }
+.president-portrait strong { display: block; color: var(--crimson); font: 24px Georgia, serif; }
+.president-portrait span { display: block; margin-top: 9px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.8px; }
+.president-message .eyebrow { color: var(--crimson); }
+.president-message h2 { font-size: clamp(32px, 3.4vw, 46px); margin-top: 23px; }
+.president-message > p { font-size: 14px; line-height: 1.9; margin-bottom: 20px; color: #554d48; }
+.president-message .president-greeting { color: var(--crimson); font: 21px/1.5 Georgia, serif; margin-top: 26px; }
+.president-signature { display: inline-block; color: var(--crimson); font: italic 24px/1.5 Georgia, serif; margin-top: 12px; }
+.president-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.president-message .external-note { font-size: 11px; margin-top: 18px; }
+.hero-actions { flex-wrap: wrap; }
+@media (max-width: 960px) { .president-grid { gap: 36px; grid-template-columns: minmax(200px, 280px) minmax(0, 1fr); } }
+@media (max-width: 700px) { .president-section { padding-block: 50px; } .president-grid { grid-template-columns: 1fr; gap: 38px; } .president-portrait { width: min(100%, 320px); margin-inline: auto; } }
