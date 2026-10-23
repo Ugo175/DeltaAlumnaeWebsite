@@ -3,14 +3,16 @@ import { SiteLink } from "@/components/ui/SiteLink";
 import Image from "next/image";
 
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { destinations, navigation } from "@/config/navigation";
 import { site } from "@/config/site";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
-  function closeMenu() { setOpen(false); }
+  function closeMenu() { setOpen(false); document.querySelectorAll<HTMLDetailsElement>(".nav-dropdown[open]").forEach(detail => { detail.open = false; }); }
   return <header className="site-header" onKeyDown={(event) => {
     if (event.key === "Escape") {
       const detail = (event.target as HTMLElement).closest("details");
@@ -26,10 +28,10 @@ export function Navbar() {
       </SiteLink>
       <button ref={toggle} className="menu-toggle" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       <nav id="main-navigation" aria-label="Main navigation" className={open ? "navigation is-open" : "navigation"}>
-        {navigation.map(item => item.children ? <details className="nav-dropdown" key={item.label}>
+        {navigation.map(item => item.children ? <details className={pathname === item.href ? "nav-dropdown is-current" : "nav-dropdown"} key={item.label}>
           <summary>{item.label}<ChevronDown size={13} aria-hidden="true" /></summary>
-          <div className="dropdown-panel">{item.children.map(child => <SiteLink key={child.label} href={child.href} onClick={closeMenu}>{child.label}</SiteLink>)}</div>
-        </details> : <SiteLink key={item.label} href={item.href} onClick={closeMenu} aria-current={item.href === "/" ? "page" : undefined}>{item.label}</SiteLink>)}
+          <div className="dropdown-panel">{item.children.map(child => <SiteLink key={child.label} href={child.href} aria-current={pathname === child.href ? "page" : undefined} onClick={closeMenu}>{child.label}</SiteLink>)}</div>
+        </details> : <SiteLink key={item.label} href={item.href} onClick={closeMenu} aria-current={item.href === pathname ? "page" : undefined}>{item.label}</SiteLink>)}
         <SiteLink className="nav-contact" href={destinations.contact} onClick={closeMenu}>Contact us <ArrowUpRight size={14} aria-hidden="true" /></SiteLink>
       </nav>
     </div>

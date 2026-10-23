@@ -16,7 +16,7 @@ export function PresidentsMessage() {
         <h2 id="president-title">Service with purpose.<br /><em>Sisterhood at heart.</em></h2>
         <p className="president-greeting">{president.greeting}</p>
         {president.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-        <p>{president.closing}<br /><strong className="president-signature">{president.name}</strong></p>
+        <p>{president.closing}<br /><em className="president-signature">{president.name}</em></p>
         <div className="president-links"><SiteLink className="text-link" href={destinations.national}>About Delta <ArrowUpRight size={16} aria-hidden="true" /></SiteLink><SiteLink className="text-link" href={destinations.region}>Southwest Region <ArrowUpRight size={16} aria-hidden="true" /></SiteLink></div>
         <p className="external-note">National and regional websites open in a new tab. Return to this tab to continue exploring Monroe Alumnae.</p>
       </div>
