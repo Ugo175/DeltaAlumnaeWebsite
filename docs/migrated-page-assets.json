@@ -1,0 +1,62 @@
+[
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_c7cda4596a64453e8136b26950087d46~mv2.jpg",
+    "path": "public/images/gallery/chapter-01.jpg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_a6ced8e733a4428eb25c0d58ea7416a5~mv2.jpeg",
+    "path": "public/images/gallery/chapter-02.jpeg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_16f9d204ae10434bbfef16c2f279ffe0~mv2.jpg",
+    "path": "public/images/gallery/chapter-03.jpg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_dca3fc07537d44bb897ff3c19f2a59f3~mv2.jpg",
+    "path": "public/images/gallery/chapter-04.jpg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_ffeaccb48c5842d1992dda4f95b4ca17~mv2.jpg",
+    "path": "public/images/gallery/chapter-05.jpg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_7d4749476b32424a9bffe95e4869e730~mv2.jpeg",
+    "path": "public/images/gallery/chapter-06.jpeg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_b40ab3ec80d449c18ab3806ed0d29aa0~mv2.png",
+    "path": "public/images/gallery/chapter-07.png"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_290cab91fa4241a1b24e4501e971f333~mv2.png",
+    "path": "public/images/gallery/chapter-08.png"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_90a61af9c45b485085b2f5d08e2bd2a6~mv2.jpg",
+    "path": "public/images/gallery/chapter-09.jpg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_aba8bafce5404b1b85bcfc4b0926f843~mv2.jpeg",
+    "path": "public/images/gallery/chapter-10.jpeg"
+  },
+  {
+    "section": "gallery",
+    "url": "https://static.wixstatic.com/media/b376c6_7c753be7c1b043b5a255058cf4469fdc~mv2.jpg",
+    "path": "public/images/gallery/chapter-11.jpg"
+  },
+  {
+    "section": "membership",
+    "url": "https://static.wixstatic.com/media/b376c6_de255642daea4d2e993be67e1ed94377~mv2.jpg",
+    "path": "public/images/membership.jpg"
+  }
+]

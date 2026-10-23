@@ -1,9 +1,8 @@
-// Verified from the published Monroe website on October 13, 2026.
-// Replace any value with a local route as that page is migrated.
+// Main pages migrated October 22, 2026. Detail/resource URLs verified in Wix navigation.
 const wix = "https://www.dstmonroealumnae.org";
 export const destinations = {
-  home: "/", about: `${wix}/about-us`, programs: `${wix}/portfolio`,
-  gallery: `${wix}/gallery`, membership: `${wix}/membership`, contact: `${wix}/contact`,
+  home: "/", about: "/about-us", programs: "/programs",
+  gallery: "/gallery", membership: "/membership", contact: `${wix}/contact`,
   national: "https://www.deltasigmatheta.org/",
   region: "https://www.dstsouthwes.org/",
 };
@@ -15,3 +14,17 @@ export const navigation: NavigationItem[] = [
   { label: "Gallery", href: destinations.gallery },
   { label: "Membership", href: destinations.membership },
 ];
+
+// Existing detail pages stay available until their individual migration.
+export const chapterResources = {
+  economic: `${wix}/projects-8`,
+  educational: `${wix}/copy-of-economic-development`,
+  international: `${wix}/copy-2-of-economic-development`,
+  health: `${wix}/copy-of-international-awareness-inv`,
+  political: `${wix}/copy-2-of-international-awareness-inv`,
+  arts: `${wix}/art-letters`,
+  scholarship: `${wix}/scholarship`,
+  deltaDears: `${wix}/delta-dears`,
+  membershipServices: `${wix}/membership-services`,
+  sororsOnly: `${wix}/sorors-only`,
+};
