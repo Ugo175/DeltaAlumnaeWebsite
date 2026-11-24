@@ -9,7 +9,7 @@ export function PresidentsMessage() {
       <figure className="president-portrait">
         <Image src={president.image} alt={`${president.name}, Monroe Alumnae Chapter President`} width={president.width} height={president.height} sizes="(max-width: 700px) 90vw, 380px" />
         <figcaption><strong>{president.name}</strong><span>Chapter President</span></figcaption>
-        <SiteLink className="button button-crimson president-board-link" href={destinations.eboard}>Meet Our Eboard</SiteLink>
+        <SiteLink className="button button-crimson president-board-link" href={destinations.eboard}>Meet Our Leadership</SiteLink>
       </figure>
       <div className="president-message">
         <p className="eyebrow">A welcome from our president</p>

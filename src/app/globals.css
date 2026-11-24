@@ -30,7 +30,11 @@ button { font: inherit; }
 .navigation > a, summary { padding-block: 16px; }
 .navigation > a:hover, summary:hover { color: var(--crimson); }
 .navigation [aria-current] { color: var(--crimson); border-bottom: 2px solid var(--crimson); }
-.navigation .nav-contact { display: flex; align-items: center; gap: 8px; border: 1px solid #d9c9c8; padding: 13px 16px; color: var(--crimson); }
+.navigation .nav-contact { display: flex; align-items: center; gap: 8px; border: 1px solid #d9c9c8; padding: 13px 16px; color: var(--crimson); transition: box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease; }
+.navigation .nav-contact:focus-visible { border-color: var(--crimson); background-color: #fff5f5; box-shadow: 0 0 18px #a6193840, 0 0 5px #a6193826; }
+@media (hover: hover) and (pointer: fine) {
+  .navigation .nav-contact:hover { border-color: var(--crimson); background-color: #fff5f5; box-shadow: 0 0 18px #a6193840, 0 0 5px #a6193826; }
+}
 .nav-dropdown { position: relative; }
 .nav-dropdown summary { display: flex; align-items: center; gap: 6px; list-style: none; }
 summary::-webkit-details-marker { display: none; }
@@ -43,6 +47,8 @@ summary::-webkit-details-marker { display: none; }
 .hero-content { padding-block: 64px; }
 .hero-photo { margin: 0; background: #211e1c; }
 .hero-photo img { display: block; width: 100%; height: auto; }
+.hero-photo-blend { position: relative; }
+.hero-photo-blend::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, #211e1c 0%, transparent 10%, transparent 92%, #211e1c 100%); }
 .eyebrow { display: flex; align-items: center; gap: 14px; font-size: 10px; font-weight: 600; letter-spacing: 2.3px; text-transform: uppercase; }
 .eyebrow span { width: 34px; height: 1px; background: #e3b2ab; }
 h1 { font: normal clamp(42px, 4.7vw, 68px)/1.12 Georgia, serif; letter-spacing: -2px; margin: 30px 0 24px; }
@@ -89,13 +95,13 @@ h2 em { color: var(--crimson); font-weight: normal; }
 .president-portrait { margin: 0; padding-top: 10px; }
 .president-portrait img { width: 100%; height: auto; border-radius: 160px 160px 4px 4px; border-bottom: 5px solid var(--crimson); }
 .president-portrait figcaption { padding-top: 23px; text-align: center; }
-.president-portrait strong { display: block; color: var(--crimson); font: 24px Georgia, serif; }
+.president-portrait strong { display: block; color: var(--crimson); font: italic 24px Georgia, serif; }
 .president-portrait span { display: block; margin-top: 9px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.8px; }
 .president-message .eyebrow { color: var(--crimson); font-size: 12px; }
 .president-message h2 { font-size: clamp(32px, 3.4vw, 46px); margin-top: 23px; }
 .president-message > p { max-width: 65ch; font-size: 20px; line-height: 1.8; margin-bottom: 26px; color: #39332f; }
 .president-message .president-greeting { color: var(--crimson); font: 25px/1.5 Georgia, serif; margin-top: 26px; }
-.president-signature { display: inline-block; color: var(--crimson); font: italic 30px/1.5 Georgia, serif; margin-top: 12px; }
+.president-signature { display: inline-block; color: var(--crimson); font: normal 36px/1.5 "Snell Roundhand", "Brush Script MT", "Segoe Script", "Apple Chancery", cursive; margin-top: 12px; }
 .president-links { display: flex; gap: 28px; flex-wrap: wrap; }
 .president-message .external-note { font-size: 16px; margin-top: 18px; }
 .hero-actions { flex-wrap: wrap; }
@@ -157,7 +163,7 @@ html { scroll-padding-top: 160px; }
 @media (prefers-reduced-motion: reduce) {
   .program-card:hover, .program-card:focus-within { transform: none; }
 }
-.program-number { color: var(--crimson); font: 24px Georgia, serif; }
+.program-number { color: var(--crimson); font: italic 24px Georgia, serif; }
 .program-card h3, .visitor-checklist h3 { font: 27px/1.3 Georgia, serif; margin-block: 25px 12px; }
 .program-card p, .visitor-checklist p { font-size: 18px; line-height: 1.8; color: #554d48; }
 .program-card .text-link { margin-top: auto; font-size: 16px; }
@@ -246,11 +252,48 @@ html { scroll-padding-top: 160px; }
 .eboard-welcome > .president-portrait { width: min(100%, 320px); margin: 0 auto 48px; }
 
 .eboard-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; margin-top: 40px; }
-.eboard-card { margin: 0; background: #fff; border-bottom: 3px solid var(--crimson); }
+.eboard-card { margin: 0; background: #fff; border-bottom: 3px solid var(--crimson); position: relative; transition: transform 220ms ease, box-shadow 220ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .eboard-card:hover { transform: scale(1.025); box-shadow: 0 12px 28px #211e1c1a; z-index: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eboard-card:hover { transform: none; }
+}
 .eboard-photo { background: #eee7dc; padding: 20px 16px 0; }
 .eboard-photo img { display: block; width: 100%; height: 340px; object-fit: contain; object-position: bottom; }
+.eboard-photo:has(img[alt="Kanzadia Brothers"]) { overflow: hidden; }
+.eboard-photo img[alt="Kanzadia Brothers"] { transform: scale(1.16); transform-origin: center bottom; }
 .eboard-card figcaption { padding: 24px 20px; text-align: center; }
 .eboard-card h3 { font: 25px/1.35 Georgia, serif; color: var(--crimson); margin: 0; }
 .eboard-card p { font-size: 18px; line-height: 1.6; margin: 10px 0 0; }
 @media (max-width: 960px) { .eboard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .eboard-grid { grid-template-columns: 1fr; } }
+
+/* Expandable navigation previews. Native disclosure controls also support touch and keyboard. */
+.nav-preview-title { display: block; font-size: 18px; font-weight: 600; color: var(--crimson); }
+.nav-preview-description { display: block; margin-top: 6px; font-size: 15px; font-weight: 400; line-height: 1.6; color: #554d48; }
+.dropdown-panel a { border-radius: 5px; }
+.nav-dropdown[open] > summary svg { transform: rotate(180deg); }
+@media (min-width: 1151px) {
+  .nav-dropdown { position: static; }
+  .nav-inner { position: relative; align-items: stretch; }
+  .navigation { align-items: stretch; }
+  .navigation > a, .nav-dropdown > summary { display: flex; align-items: center; }
+  .nav-dropdown > summary { height: 100%; }
+  .navigation .nav-contact { align-self: center; }
+  .dropdown-panel { top: 100%; left: auto; right: 0; width: min(760px, 100%); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 22px; max-height: calc(100dvh - 160px); overflow-y: auto; border-radius: 0 0 10px 10px; }
+  .dropdown-panel a { padding: 16px; }
+}
+
+.vice-presidents-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; padding-block: 60px; border-top: 1px solid #d5c6bb; }
+.vice-president-welcome > .president-portrait { width: min(100%, 320px); margin: 0 auto 40px; }
+.vice-president-welcome .president-portrait img { height: 360px; object-fit: contain; object-position: bottom; border-radius: 0; }
+.vice-president-welcome .president-portrait figcaption { min-height: 110px; }
+.vice-president-welcome .president-message h2 { font-size: clamp(28px, 2.5vw, 36px); }
+@media (max-width: 700px) { .vice-presidents-section { grid-template-columns: 1fr; gap: 60px; padding-block: 40px; } }
+
+/* A page-scoped watermark stays behind readable leadership content. */
+.eboard-page { position: relative; isolation: isolate; }
+.eboard-page::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: url("/images/chapter-logo-new.png"); background-repeat: repeat-y; background-position: center 180px; background-size: min(900px, 95vw) auto; opacity: .045; }
+.eboard-page > .president-section { background: transparent; }
+.eboard-page .president-portrait img { background-color: var(--cream); }

@@ -5,16 +5,17 @@ import { PageIntro } from "@/components/layout/PageIntro";
 import { SiteLink } from "@/components/ui/SiteLink";
 import { destinations } from "@/config/navigation";
 import { boardMembers } from "@/data/eboard";
+import { VicePresidentsWelcome } from "@/components/programs/VicePresidentsWelcome";
 import { president } from "@/data/president";
 
 export const metadata: Metadata = {
-  title: "Meet Our Eboard | Monroe Alumnae Chapter",
+  title: "Meet Our Executive Board | Monroe Alumnae Chapter",
   description: "A welcome from Dr. LaTina S. Johnson, President of Monroe Alumnae Chapter.",
 };
 
 export default function Eboard() {
-  return <>
-    <PageIntro eyebrow="Our chapter leadership" title="Meet Our Eboard." accent="Leading with sisterly spirit." description="Get to know the leadership of Monroe Alumnae Chapter." />
+  return <div className="eboard-page">
+    <PageIntro eyebrow="Our chapter leadership" title="Meet Our Executive Board." accent="Leading with sisterly spirit." description="Get to know the leadership of Monroe Alumnae Chapter." />
     <section className="president-section" aria-labelledby="eboard-president-title">
       <div className="container eboard-welcome">
         <figure className="president-portrait">
@@ -31,15 +32,16 @@ export default function Eboard() {
         </div>
       </div>
     </section>
+    <VicePresidentsWelcome />
     <section className="container content-section" aria-labelledby="board-members-title">
       <p className="eyebrow section-kicker">Service through leadership</p>
-      <h2 id="board-members-title">Our executive board</h2>
+      <h2 id="board-members-title">Our Executive Board</h2>
       <div className="eboard-grid">
-        {boardMembers.map(member => <figure className="eboard-card" key={member.name}>
+        {[{ name: president.name, role: "President", image: president.image, width: president.width, height: president.height }, ...boardMembers].map(member => <figure className="eboard-card" key={member.name}>
           <div className="eboard-photo"><Image src={member.image} alt={member.name} width={member.width} height={member.height} sizes="(max-width: 600px) 90vw, (max-width: 960px) 45vw, 30vw" /></div>
           <figcaption><h3>{member.name}</h3><p>{member.role}</p></figcaption>
         </figure>)}
       </div>
     </section>
-  </>;
+  </div>;
 }

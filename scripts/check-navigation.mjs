@@ -45,7 +45,7 @@ for (const route of routes) {
     }
   }
   if (route === "/contact") {
-    assert(html.includes("mailto:dst@monroealumnae1955.org"), "Contact email must work without Wix");
+    assert(html.includes("mailto:macpres@monroealumnae1955.org"), "Contact email must work without Wix");
     assert(html.includes("tel:+13185820653"), "Contact telephone link must exist");
     assert(!/<form\b/.test(html), "Do not present an unconnected submission form");
   }

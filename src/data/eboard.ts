@@ -1,4 +1,4 @@
-// Names and roles supplied by the chapter in the Delta-Eboard folder.
+// Names, roles, and portraits supplied by the chapter.
 export const boardMembers = [
   {
     "name": "Dr. Felicia Sledge-Murphy",
@@ -48,6 +48,13 @@ export const boardMembers = [
     "image": "/images/eboard/votika-lynch.png",
     "width": 1073,
     "height": 1465
+  },
+  {
+    "name": "Kanzadia Brothers",
+    "role": "Financial Secretary",
+    "image": "/images/eboard/kanzadia-brothers-transparent.png",
+    "width": 1025,
+    "height": 1534
   },
   {
     "name": "Stephanie Arvie",
