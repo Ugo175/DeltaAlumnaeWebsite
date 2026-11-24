@@ -13,6 +13,6 @@ export function Hero() {
       <p className="hero-intro">{hero.introduction}</p>
       <div className="hero-actions"><SiteLink className="button button-crimson" href={destinations.about}>Meet Monroe Alumnae <ArrowRight size={18} aria-hidden="true" /></SiteLink><SiteLink className="hero-secondary" href={destinations.programs}>Explore our programs <ArrowUpRight size={17} aria-hidden="true" /></SiteLink><SiteLink className="hero-secondary" href={destinations.national}>About Delta <ArrowUpRight size={17} aria-hidden="true" /></SiteLink></div>
     </div>
-    <figure className="hero-photo"><Image src={hero.image} alt={hero.imageAlt} width={1264} height={720} sizes="100vw" priority /><figcaption className="hero-caption">Our chapter. Our community. Our commitment.</figcaption></figure>
+    <figure className="hero-photo"><div className="hero-photo-blend"><Image src={hero.image} alt={hero.imageAlt} width={hero.imageWidth} height={hero.imageHeight} sizes="100vw" priority /></div><figcaption className="hero-caption">Our chapter. Our community. Our commitment.</figcaption></figure>
   </section>;
 }
