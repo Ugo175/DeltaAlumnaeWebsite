@@ -1,4 +1,4 @@
-# Monroe Alumnae Chapter website
+# Monroe Alumnae Chapter website.
 
 Milestone one: a statically rendered Next.js App Router homepage with TypeScript, React, Tailwind CSS, ESLint, and Lucide React. Responsive navigation, an introduction above an unobstructed chapter photograph, a president’s welcome with portrait, and a basic footer are implemented. No backend, CMS, authentication, or database is included.
 
